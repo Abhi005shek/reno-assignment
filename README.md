@@ -4,6 +4,11 @@
 npm i
 ```
 
+## Insatallation
+```bash
+npm i
+```
+
 ## Getting Started
 
 First, run the development server:

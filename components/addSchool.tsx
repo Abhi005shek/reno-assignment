@@ -6,10 +6,10 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import {useRouter} from 'next/navigation';
 import { ImagePlusIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 
 interface DataProps {
   name: string;
