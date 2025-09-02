@@ -81,12 +81,12 @@ export async function POST(req: Request) {
         headers: { "Content-Type": "application/json" },
       }
     );
-  } catch (err: { message: string }) {
+  } catch (err) {
     console.log("ERROR 💥 : ", err);
     return new Response(
       JSON.stringify({
         success: false,
-        message: err?.message,
+        message: err instanceof Error ? err.message : "Something went wrong",
       }),
       {
         status: 201,

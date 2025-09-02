@@ -10,13 +10,23 @@ import { ImagePlusIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
 
+interface DataProps {
+  name: string;
+  email_id: string;
+  address: string;
+  contact: string;
+  city: string;
+  state: string;
+  image: File;
+}
+
 export default function AddSchool() {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<DataProps>();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [preview, setPreview] = useState("");
 
@@ -37,7 +47,7 @@ export default function AddSchool() {
     }
   }
 
-  async function onSubmit(data: ) {
+  async function onSubmit(data: DataProps) {
     let imageFile: File;
     try {
       const formData = new FormData();

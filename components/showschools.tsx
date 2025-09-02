@@ -21,7 +21,6 @@ const cardVariants = {
 
 interface SchoolInfoProps {
   name: string;
-  board: string;
   city: string;
   state: string;
   image?: string;
