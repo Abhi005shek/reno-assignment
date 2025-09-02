@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import {useRouter} from 'next/navigation';
 import { ImagePlusIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
@@ -29,6 +30,7 @@ export default function AddSchool() {
   } = useForm<DataProps>();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [preview, setPreview] = useState("");
+  const router = useRouter();
 
   function onFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -73,6 +75,7 @@ export default function AddSchool() {
         setPreview("");
         if (fileInputRef.current) fileInputRef.current.value = "";
         toast.success("School Added Successfully!!");
+        router.push("/get");
       }
     } catch (err) {
       toast.error("Something went wrong!!");
