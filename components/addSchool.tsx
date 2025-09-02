@@ -37,7 +37,7 @@ export default function AddSchool() {
     }
   }
 
-  async function onSubmit(data: any) {
+  async function onSubmit(data: ) {
     let imageFile: File;
     try {
       const formData = new FormData();
