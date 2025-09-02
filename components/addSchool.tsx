@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import { ImagePlusIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 interface DataProps {
   name: string;
@@ -29,6 +30,7 @@ export default function AddSchool() {
   } = useForm<DataProps>();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [preview, setPreview] = useState("");
+  const router = useRouter();
 
   function onFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -73,6 +75,7 @@ export default function AddSchool() {
         setPreview("");
         if (fileInputRef.current) fileInputRef.current.value = "";
         toast.success("School Added Successfully!!");
+        router.push("/get");
       }
     } catch (err) {
       toast.error("Something went wrong!!");
