@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Loader, School, Star, StarHalf } from "lucide-react";
-import { demoSchools } from "@/data/demo";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
@@ -53,10 +52,6 @@ function ShowSchools() {
             animate="visible"
             className="px-6 mt-4 rounded w-full grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
           >
-            {/* {demoSchools.map((s, i) => {
-            return <SchoolCard key={s.name + i} data={s} />;
-          })} */}
-
             {data.map((s: any, i) => {
               return <SchoolCard key={s.name + i} data={s} />;
             })}

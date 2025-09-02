@@ -14,7 +14,6 @@ interface SchoolData {
 
 export async function POST(req: Request) {
   try {
-
     let image: string;
     const formData = await req.formData();
     const body: SchoolData = {
@@ -62,7 +61,7 @@ export async function POST(req: Request) {
 
     const sql =
       "INSERT INTO Schools (name, email, address, contact, city, state, image) VALUES($1, $2, $3, $4, $5, $6, $7)";
-    const res = await pool.query(sql, [
+    await pool.query(sql, [
       body.name,
       body.email,
       body.address,

@@ -1,6 +1,6 @@
 import pool from "@/lib/db";
 
-export async function GET(req: Request) {
+export async function GET() {
   try {
     const sql = "SELECT * FROM schools";
     const res = await pool.query(sql);
