@@ -1,10 +1,4 @@
 ## Insatallation
-
-```bash
-npm i
-```
-
-## Insatallation
 ```bash
 npm i
 ```
