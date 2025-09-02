@@ -59,9 +59,10 @@ function ShowSchools() {
             animate="visible"
             className="px-6 mt-4 rounded w-full grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
           >
-            {data.map((s: SchoolInfoProps, i) => {
-              return <SchoolCard key={s.name + i} data={s} />;
-            })}
+            {data &&
+              data?.map((s: SchoolInfoProps, i) => {
+                return <SchoolCard key={s.name + i} data={s} />;
+              })}
           </motion.div>
         )}
       </div>
