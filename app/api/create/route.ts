@@ -14,7 +14,7 @@ interface SchoolData {
 
 export async function POST(req: Request) {
   try {
-    // const body: SchoolData = await req.json();
+
     let image: string;
     const formData = await req.formData();
     const body: SchoolData = {
@@ -48,7 +48,6 @@ export async function POST(req: Request) {
       const buffer = Buffer.from(await body.image.arrayBuffer());
       const filename = Date.now() + "_" + body.image.name.replaceAll(" ", "_");
 
-      // Ensure uploads folder exists
       const uploadPath = path.join(
         process.cwd(),
         "public",
