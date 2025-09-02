@@ -19,6 +19,14 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+interface SchoolInfoProps {
+  name: string;
+  board: string;
+  city: string;
+  state: string;
+  image?: string;
+}
+
 function ShowSchools() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -52,7 +60,7 @@ function ShowSchools() {
             animate="visible"
             className="px-6 mt-4 rounded w-full grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
           >
-            {data.map((s: any, i) => {
+            {data.map((s: SchoolInfoProps, i) => {
               return <SchoolCard key={s.name + i} data={s} />;
             })}
           </motion.div>
@@ -64,15 +72,7 @@ function ShowSchools() {
 
 export default ShowSchools;
 
-interface SchoolCardProps {
-  name: string;
-  board: string;
-  city: string;
-  state: string;
-  image?: string;
-}
-
-function SchoolCard({ data }: { data: SchoolCardProps }) {
+function SchoolCard({ data }: { data: SchoolInfoProps }) {
   return (
     <motion.div
       variants={cardVariants}

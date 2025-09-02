@@ -81,7 +81,7 @@ export async function POST(req: Request) {
         headers: { "Content-Type": "application/json" },
       }
     );
-  } catch (err: any) {
+  } catch (err: { message: string }) {
     console.log("ERROR 💥 : ", err);
     return new Response(
       JSON.stringify({

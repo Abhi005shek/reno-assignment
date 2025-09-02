@@ -15,12 +15,12 @@ export async function GET() {
         headers: { "Content-Type": "application/json" },
       }
     );
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.log("ERROR 💥 : ", err);
     return new Response(
       JSON.stringify({
         success: false,
-        message: err?.message ?? "No record found.",
+        message: "No record found.",
       }),
       {
         status: 500,
